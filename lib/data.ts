@@ -143,7 +143,6 @@ const responsibilitiesMap = {
     ]
 };
 
-// CFO duties implied - handling finances/budget. I'll add a generic finance one since not explicitly provided but referenced in CRO duties.
 const cfoDuties = [
     "Manage IEDC's financial accounts and budget allocation.",
     "Track income and expenses for all events.",
@@ -159,50 +158,50 @@ const cfoDuties = [
 
 export const excomMembers: ExcomMember[] = [
     // Core
-    { id: "ceo", name: "Abin Stanislaus", role: "CEO", category: "Core", image: "", responsibilities: responsibilitiesMap.CEO },
-    { id: "co-ceo", name: "Ayswarya E S", role: "CO-CEO", category: "Core", image: "", responsibilities: responsibilitiesMap.CEO },
+    { id: "ceo", name: "Abin Stanislaus", role: "CEO", category: "Core", image: "/assets/ceo.png", responsibilities: responsibilitiesMap.CEO },
+    { id: "co-ceo", name: "Ayswarya E S", role: "CO-CEO", category: "Core", image: "/assets/coceo.png", responsibilities: responsibilitiesMap.CEO },
 
     // Tech
-    { id: "cto", name: "Alfred Anto", role: "CTO", category: "Tech", image: "", responsibilities: responsibilitiesMap.CTO },
-    { id: "co-cto", name: "Farhan M Jeejo", role: "CO-CTO", category: "Tech", image: "", responsibilities: responsibilitiesMap.CTO },
+    { id: "cto", name: "Alfred Anto", role: "CTO", category: "Tech", image: "/assets/cto.png", responsibilities: responsibilitiesMap.CTO },
+    { id: "co-cto", name: "Farhan M Jeejo", role: "CO-CTO", category: "Tech", image: "/assets/cocto.png", responsibilities: responsibilitiesMap.CTO },
 
     // Ops
-    { id: "coo", name: "Kshithij V R", role: "COO", category: "Ops", image: "", responsibilities: responsibilitiesMap.COO },
-    { id: "co-coo", name: "Tharun Krishna C U", role: "CO-COO", category: "Ops", image: "", responsibilities: responsibilitiesMap.COO },
+    { id: "coo", name: "Kshithij V R", role: "COO", category: "Ops", image: "/assets/coo.png", responsibilities: responsibilitiesMap.COO },
+    { id: "co-coo", name: "Tharun Krishna C U", role: "CO-COO", category: "Ops", image: "/assets/cocoo.png", responsibilities: responsibilitiesMap.COO },
 
     // Marketing
-    { id: "cmo", name: "Gibin C Jijo", role: "CMO", category: "Marketing", image: "", responsibilities: responsibilitiesMap.CMO },
-    { id: "co-cmo", name: "Parvathy Dilip", role: "CO-CMO", category: "Marketing", image: "", responsibilities: responsibilitiesMap.CMO },
+    { id: "cmo", name: "Gibin C Jijo", role: "CMO", category: "Marketing", image: "/assets/cmo.png", responsibilities: responsibilitiesMap.CMO },
+    { id: "co-cmo", name: "Parvathy Dilip", role: "CO-CMO", category: "Marketing", image: "/assets/cocmo.png", responsibilities: responsibilitiesMap.CMO },
 
     // Finance
-    { id: "cfo", name: "Ann Johnson", role: "CFO", category: "Finance", image: "", responsibilities: cfoDuties },
-    { id: "co-cfo", name: "Savio Jerry", role: "CO-CFO", category: "Finance", image: "", responsibilities: cfoDuties },
+    { id: "cfo", name: "Ann Johnson", role: "CFO", category: "Finance", image: "/assets/cfo.png", responsibilities: cfoDuties },
+    { id: "co-cfo", name: "Savio Jerry", role: "CO-CFO", category: "Finance", image: "/assets/cocfo.png", responsibilities: cfoDuties },
 
     // Publicity
-    { id: "cpo", name: "Jewel E J", role: "CPO", category: "Publicity", image: "", responsibilities: responsibilitiesMap.CPO },
-    { id: "co-cpo", name: "H Athila", role: "CO-CPO", category: "Publicity", image: "", responsibilities: responsibilitiesMap.CPO },
+    { id: "cpo", name: "Jewel E J", role: "CPO", category: "Publicity", image: "/assets/cpo.png", responsibilities: responsibilitiesMap.CPO },
+    { id: "co-cpo", name: "H Athila", role: "CO-CPO", category: "Publicity", image: "/assets/cocpo.png", responsibilities: responsibilitiesMap.CPO },
 
     // Creative
-    { id: "cco", name: "Abhinand Venugopal", role: "CCO", category: "Creative", image: "", responsibilities: responsibilitiesMap.CCO },
-    { id: "co-cco", name: "Sidharth S Menon", role: "CO-CCO", category: "Creative", image: "", responsibilities: responsibilitiesMap.CCO },
+    { id: "cco", name: "Abhinand Venugopal", role: "CCO", category: "Creative", image: "/assets/cco.png", responsibilities: responsibilitiesMap.CCO },
+    { id: "co-cco", name: "Sidharth S Menon", role: "CO-CCO", category: "Creative", image: "/assets/cocco.png", responsibilities: responsibilitiesMap.CCO },
 
     // Resources
-    { id: "cro", name: "Patricia Paul", role: "CRO", category: "Resources", image: "", responsibilities: responsibilitiesMap.CRO },
-    { id: "co-cro", name: "Hridya", role: "CO-CRO", category: "Resources", image: "", responsibilities: responsibilitiesMap.CRO },
+    { id: "cro", name: "Patricia Paul", role: "CRO", category: "Resources", image: "/assets/cro.png", responsibilities: responsibilitiesMap.CRO },
+    { id: "co-cro", name: "Hridya", role: "CO-CRO", category: "Resources", image: "/assets/cocro.png", responsibilities: responsibilitiesMap.CRO },
 
     // IPR
-    { id: "ipr", name: "Edwin Shaju Malakaran", role: "IPR Head", category: "IPR", image: "", responsibilities: responsibilitiesMap.IPR },
-    { id: "co-ipr", name: "Sooryakrishna P R", role: "CO-IPR", category: "IPR", image: "", responsibilities: responsibilitiesMap.IPR },
+    { id: "ipr", name: "Edwin Shaju Malakaran", role: "IPR Head", category: "IPR", image: "/assets/ipr.png", responsibilities: responsibilitiesMap.IPR },
+    { id: "co-ipr", name: "Sooryakrishna P R", role: "CO-IPR", category: "IPR", image: "/assets/coipr.png", responsibilities: responsibilitiesMap.IPR },
 
     // Women Lead
-    { id: "women-lead", name: "Anna Shaju", role: "Women Lead", category: "Community", image: "", responsibilities: responsibilitiesMap.WomenLead },
-    { id: "co-women-lead", name: "Agnes Shanoj", role: "Co-Lead (Women)", category: "Community", image: "", responsibilities: responsibilitiesMap.WomenLead },
+    { id: "women-lead", name: "Anna Shaju", role: "Women Lead", category: "Community", image: "/assets/women.png", responsibilities: responsibilitiesMap.WomenLead },
+    { id: "co-women-lead", name: "Agnes Shanoj", role: "Co-Lead (Women)", category: "Community", image: "/assets/cowomen.png", responsibilities: responsibilitiesMap.WomenLead },
 
     // Hobby Hub
-    { id: "hobby-lead", name: "Iris Wilson", role: "Hobby Hub Lead", category: "Community", image: "", responsibilities: responsibilitiesMap.HobbyHub },
-    { id: "co-hobby-lead", name: "Pranaya", role: "CO-Hobby Hub", category: "Community", image: "", responsibilities: responsibilitiesMap.HobbyHub },
+    { id: "hobby-lead", name: "Iris Wilson", role: "Hobby Hub Lead", category: "Community", image: "/assets/hobby.png", responsibilities: responsibilitiesMap.HobbyHub },
+    { id: "co-hobby-lead", name: "Pranaya", role: "CO-Hobby Hub", category: "Community", image: "/assets/cohobby.png", responsibilities: responsibilitiesMap.HobbyHub },
 
     // Engravers
-    { id: "engravers-lead", name: "Goury Shankar", role: "Engravers Lead", category: "Innovation", image: "", responsibilities: responsibilitiesMap.Engravers },
-    { id: "co-engravers-lead", name: "Mishael Mathew", role: "CO-Engravers", category: "Innovation", image: "", responsibilities: responsibilitiesMap.Engravers },
+    { id: "engravers-lead", name: "Goury Shankar", role: "Engravers Lead", category: "Innovation", image: "/assets/engravers.png", responsibilities: responsibilitiesMap.Engravers },
+    { id: "co-engravers-lead", name: "Mishael Mathew", role: "CO-Engravers", category: "Innovation", image: "/assets/coengravers.png", responsibilities: responsibilitiesMap.Engravers },
 ];
