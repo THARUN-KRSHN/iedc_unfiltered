@@ -21,7 +21,14 @@ export default function MemberModal({ isOpen, onClose, member }: MemberModalProp
         if (isOpen) {
             setView('details');
             setMessage('');
+            document.body.classList.add('hide-header');
+        } else {
+            document.body.classList.remove('hide-header');
         }
+
+        return () => {
+            document.body.classList.remove('hide-header');
+        };
     }, [isOpen, member]);
 
     if (!member) return null;

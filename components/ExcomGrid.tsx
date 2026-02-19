@@ -12,7 +12,20 @@ export default function ExcomGrid() {
     const selectedMember = excomMembers.find(m => m.id === selectedMemberId) || null;
 
     return (
-        <section id="members" className="py-24 px-4 bg-brand-cream relative overflow-visible z-10">
+        <section id="members" className="pt-24 pb-64 px-4 bg-brand-cream relative overflow-visible z-20">
+            {/* Top Wave (Cream) */}
+            <div className="absolute top-[-99px] left-0 w-full overflow-hidden leading-none z-20 transform scale-y-[-1]">
+                <motion.div
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="w-[200%]"
+                >
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[100px] fill-brand-cream">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                        <path d="M1521.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C2023.78,31,2106.67,72,2185.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H1200V27.35A600.21,600.21,0,0,0,1521.39,56.44Z"></path>
+                    </svg>
+                </motion.div>
+            </div>
             <div className="max-w-7xl mx-auto relative z-20">
 
                 {/* Title Section */}
@@ -26,12 +39,12 @@ export default function ExcomGrid() {
                         The Team
                     </span>
                     <h2 className="font-display text-6xl md:text-9xl font-black text-brand-dark uppercase tracking-tighter leading-none mb-6 relative inline-block">
-                        Excom<span className="text-brand-blue">24-26</span>
+                        Excom<span className="text-brand-blue">25-26</span>
                     </h2>
                 </motion.div>
 
                 {/* Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 md:gap-x-8 md:gap-y-16">
                     {excomMembers.map((member, i) => (
                         <motion.div
                             key={member.id}
@@ -94,9 +107,16 @@ export default function ExcomGrid() {
 
             {/* Wave Transition (Yellow to match next section) */}
             <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-10">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] md:h-[100px] fill-brand-yellow">
-                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-brand-yellow"></path>
-                </svg>
+                <motion.div
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="w-[200%]"
+                >
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] md:h-[100px] fill-brand-yellow">
+                        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-brand-yellow"></path>
+                        <path d="M2185.66,92.83C2106.67,72,2023.78,31,1943.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,1200,27.35V120H2400V95.8C2332.19,118.92,2255.71,111.31,2185.66,92.83Z" className="fill-brand-yellow"></path>
+                    </svg>
+                </motion.div>
             </div>
         </section>
     );

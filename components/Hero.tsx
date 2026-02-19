@@ -10,7 +10,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="min-h-screen w-full flex flex-col justify-center items-center text-center px-4 md:px-8 relative overflow-hidden bg-brand-yellow text-brand-dark pt-20">
+        <section className="min-h-screen w-full flex flex-col justify-center items-center text-center px-4 md:px-8 relative overflow-hidden bg-brand-yellow text-brand-dark pt-20 sticky top-0 z-0">
 
             {/* Decorative Rotating SVG Blobs */}
             <motion.div
@@ -41,37 +41,23 @@ export default function Hero() {
                 <span className="inline-block bg-brand-blue/10 text-brand-blue font-bold tracking-[0.2em] uppercase mb-6 px-4 py-2 rounded-full text-xs md:text-sm border border-brand-blue/20">
                     Anonymous Feedback Space
                 </span>
-                <h1 className="font-display font-black text-6xl md:text-8xl lg:text-[10rem] tracking-tight mb-2 leading-[0.9] text-brand-dark uppercase drop-shadow-sm mix-blend-multiply">
+                <h1 className="font-display font-black text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] tracking-tight mb-2 leading-[0.9] text-brand-dark uppercase drop-shadow-sm mix-blend-multiply">
                     <span className="block transform -rotate-2">Excom</span>
-                    <span className="block text-white text-stroke-black drop-shadow-[4px_4px_0_rgba(0,0,0,1)] transform rotate-1 mt-2 md:mt-4">Unfiltered</span>
+                    <span className="block text-white text-stroke-black  transform rotate-1 mt-2 md:mt-4">Unfiltered</span>
                 </h1>
 
-                <div className="h-2 w-32 bg-brand-dark mx-auto my-8 md:my-10 rounded-full"></div>
 
                 <p className="max-w-2xl mx-auto text-xl md:text-2xl font-medium text-brand-dark/80 leading-relaxed font-sans px-4">
-                    A purely anonymous space to share appreciation, memes, and feedback for the <span className="text-brand-blue font-black bg-white px-2 py-1 transform -skew-x-6 inline-block shadow-[2px_2px_0_rgba(0,0,0,0.1)]">IEDC Excom 2024-26</span>.
+                    A purely anonymous space to share appreciation, memes, and feedback for the <span className="text-yellow-500 bg-brand-blue px-2 py-1 transform -skew-x-6 inline-block">
+                        IEDC Excom 2024-26
+                    </span>
+
                 </p>
             </motion.div>
 
-            <motion.button
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                onClick={scrollToInstructions}
-                className="absolute bottom-24 md:bottom-32 group flex flex-col items-center gap-4 cursor-pointer z-20"
-            >
-                <span className="text-sm font-bold uppercase tracking-[0.3em] text-brand-dark/70 group-hover:text-brand-dark transition-colors">Start Here</span>
-                <div className="p-4 bg-brand-dark text-white rounded-full animate-bounce shadow-xl border-2 border-white/20 group-hover:bg-brand-blue transition-colors duration-300">
-                    <ArrowDown className="w-6 h-6 md:w-8 md:h-8" strokeWidth={3} />
-                </div>
-            </motion.button>
+            {/* Scroll Indicator Removed */}
 
-            {/* SOLID Wavy Bottom Divider - FLIPPED HORIZONTALLY AND VERTICALLY (Rotate 180) */}
-            <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-10 transform rotate-180">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[80px] md:h-[120px] fill-brand-cream">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-                </svg>
-            </div>
+
         </section>
     );
 }

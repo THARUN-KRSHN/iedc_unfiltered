@@ -1,80 +1,102 @@
-
 'use client';
-import { motion } from 'framer-motion';
-import { Shield, Send, Heart, Archive } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Star, Circle, Square, Box, Hexagon, Triangle } from 'lucide-react';
+import { useRef } from 'react';
 
-const steps = [
-    {
-        icon: Shield,
-        title: "100% Anonymous",
-        desc: "Your identity is hidden. No login needed, no IP tracking.",
-        align: "left",
-        color: "bg-blue-100 text-blue-800"
-    },
-    {
-        icon: Send,
-        title: "Express Freely",
-        desc: "Share appreciation, suggestions, or fun confessions without hesitation.",
-        align: "right",
-        color: "bg-orange-100 text-orange-800"
-    },
-    {
-        icon: Heart,
-        title: "Be Respectful",
-        desc: "Keep it constructive and kind. Create good memories.",
-        align: "left",
-        color: "bg-red-100 text-red-800"
-    },
-    {
-        icon: Archive,
-        title: "Forever Archived",
-        desc: "Your messages will be preserved in the farewell archive provided to the Excom.",
-        align: "right",
-        color: "bg-green-100 text-green-800"
-    }
-];
+const MarqueeRow = ({ text, direction, speed, color, icons }: any) => {
+    return (
+        <div className="flex overflow-hidden whitespace-nowrap py-4 md:py-8 border-y border-white/10 relative">
+            <motion.div
+                className={`flex items-center gap-12 ${color} font-display font-black text-6xl md:text-8xl uppercase tracking-tighter`}
+                animate={{
+                    x: direction === 'left' ? ["0%", "-50%"] : ["-50%", "0%"]
+                }}
+                transition={{
+                    duration: speed,
+                    ease: "linear",
+                    repeat: Infinity
+                }}
+            >
+                {/* Repeat content multiple times to ensure smooth loop */}
+                {[...Array(8)].map((_, i) => (
+                    <div key={i} className="flex items-center gap-12 shrink-0">
+                        <span>{text}</span>
+                        {icons[i % icons.length]}
+                    </div>
+                ))}
+            </motion.div>
+        </div>
+    );
+};
 
 export default function Instructions() {
     return (
-        <section id="instructions" className="py-24 px-4 bg-brand-cream relative z-10 overflow-hidden">
+        <section id="instructions" className="py-20 bg-brand-blue relative overflow-visible z-10 sticky top-0 min-h-screen flex flex-col justify-center">
+            {/* Top Wave stuck to the top of this section to cover previous section */}
+            <div className="absolute top-[-79px] left-0 w-full overflow-hidden leading-none z-20 transform scale-y-[-1]">
+                <motion.div
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                    className="w-[200%]"
+                >
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[80px] fill-brand-blue">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                        <path d="M1521.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C2023.78,31,2106.67,72,2185.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H1200V27.35A600.21,600.21,0,0,0,1521.39,56.44Z"></path>
+                    </svg>
+                </motion.div>
+            </div>
+            {/* Background Texture/Noise could go here */}
 
-            {/* Decorative Wavy Lines */}
-            <div className="absolute top-10 right-[-100px] w-full h-[500px] pointer-events-none opacity-10">
-                <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full fill-none stroke-black stroke-[0.5]">
-                    <path d="M0 50 Q 25 25 50 50 T 100 50" />
-                    <path d="M0 60 Q 25 35 50 60 T 100 60" />
-                    <path d="M0 70 Q 25 45 50 70 T 100 70" />
-                </svg>
+            <div className="flex flex-col gap-0">
+                <MarqueeRow
+                    text="100% Anonymous"
+                    direction="right"
+                    speed={30}
+                    color="text-white"
+                    icons={[
+                        <Star key="1" className="w-12 h-12 text-brand-yellow fill-brand-yellow" />,
+                        <Circle key="2" className="w-12 h-12 text-brand-orange fill-brand-orange" />
+                    ]}
+                />
+
+                <MarqueeRow
+                    text="Express Freely"
+                    direction="left"
+                    speed={25}
+                    color="text-brand-yellow"
+                    icons={[
+                        <Square key="1" className="w-12 h-12 text-white fill-white transform rotate-12" />,
+                        <Box key="2" className="w-12 h-12 text-brand-red stroke-[3]" />
+                    ]}
+                />
+
+                <MarqueeRow
+                    text="Be Respectful"
+                    direction="right"
+                    speed={35}
+                    color="text-white"
+                    icons={[
+                        <Hexagon key="1" className="w-12 h-12 text-brand-yellow fill-brand-yellow" />,
+                        <Triangle key="2" className="w-12 h-12 text-blue-400 fill-blue-400 transform rotate-180" />
+                    ]}
+                />
+
+                <MarqueeRow
+                    text="Forever Archived"
+                    direction="left"
+                    speed={28}
+                    color="text-brand-orange"
+                    icons={[
+                        <Star key="1" className="w-12 h-12 text-white fill-white" />,
+                        <Circle key="2" className="w-12 h-12 text-brand-yellow fill-brand-yellow" />
+                    ]}
+                />
             </div>
 
-            <div className="max-w-5xl mx-auto w-full space-y-16 md:space-y-32">
-                {steps.map((step, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{ opacity: 0, x: step.align === 'left' ? -50 : 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        className={`flex flex-col md:flex-row items-center gap-8 ${step.align === 'right' ? 'md:flex-row-reverse text-center md:text-right' : 'text-center md:text-left'
-                            }`}
-                    >
-                        <div className={`flex-shrink-0 p-6 md:p-8 rounded-full border-4 border-brand-dark shadow-[8px_8px_0_rgba(0,0,0,1)] bg-white transform hover:rotate-6 transition-transform duration-300 relative z-10`}>
-                            <step.icon className={`w-12 h-12 md:w-16 md:h-16 stroke-[1.5] ${step.color.split(' ')[1]}`} />
-                        </div>
-
-                        <div className="flex-1 relative z-10 bg-white p-6 md:p-10 rounded-2xl border-2 border-brand-dark shadow-[4px_4px_0_rgba(0,0,0,0.1)]">
-                            <h3 className="font-display text-4xl md:text-5xl font-black mb-4 tracking-tight uppercase text-brand-dark">{step.title}</h3>
-                            <p className="font-sans text-brand-dark/80 text-lg md:text-xl font-medium leading-relaxed">{step.desc}</p>
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
-
-            {/* Wavy Bottom Divider */}
-            <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-10">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] md:h-[120px] fill-brand-cream transform rotate-180">
-                    <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-brand-dark"></path>
-                </svg>
+            {/* Floating Decorative Elements specifically requested */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none mix-blend-overlay opacity-20">
+                <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-400 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-500 rounded-full blur-3xl"></div>
             </div>
         </section>
     );

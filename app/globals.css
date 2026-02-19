@@ -47,6 +47,12 @@ body {
   border: 2px solid #FFFBEB;
 }
 
+
 ::-webkit-scrollbar-thumb:hover {
   background: #F59E0B;
+}
+
+body.hide-header .main-header {
+  transform: translateY(-200%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
