@@ -71,7 +71,7 @@ export default function Stats() {
         offset: ['start start', 'end end']
     });
 
-    const text = "IEDC CCE 2024-2026 was the era that redefined innovation on campus. We sparked ideas, fueled startups and built a legacy.";
+    const text = "IEDC CCE 2025-2026 was the era that redefined innovation on campus. We sparked ideas, fueled startups and built a legacy.";
     const words = text.split(" ");
 
     return (
