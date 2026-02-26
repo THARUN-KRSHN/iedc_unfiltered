@@ -70,7 +70,7 @@ export default function MemberModal({ isOpen, onClose, member }: MemberModalProp
                             animate={{ scale: 1, opacity: 1, y: 0 }}
                             exit={{ scale: 0.9, opacity: 0, y: 100 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="bg-brand-cream border-4 border-black w-full max-w-lg md:max-w-2xl max-h-[90vh] overflow-hidden rounded-[2rem] shadow-[20px_20px_0px_#000] relative pointer-events-auto flex flex-col"
+                            className="bg-brand-cream border-4 border-black w-full max-w-lg md:max-w-2xl max-h-[85vh] md:max-h-[90vh] overflow-hidden rounded-[2rem] shadow-[20px_20px_0px_#000] relative pointer-events-auto flex flex-col"
                         >
                             <button
                                 onClick={onClose}
@@ -79,21 +79,21 @@ export default function MemberModal({ isOpen, onClose, member }: MemberModalProp
                                 <X size={24} strokeWidth={3} />
                             </button>
 
-                            <div className="relative h-64 md:h-80 w-full bg-brand-orange flex items-center justify-center overflow-hidden shrink-0 border-b-4 border-black">
+                            <div className="relative h-48 md:h-80 w-full bg-brand-orange flex items-center justify-center overflow-hidden shrink-0 border-b-4 border-black">
                                 {member.image ? (
                                     <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                                 ) : (
                                     <div className="w-full h-full bg-brand-yellow flex items-center justify-center pattern-isometric">
-                                        <User className="w-32 h-32 text-black/20" />
+                                        <User className="w-24 h-24 md:w-32 md:h-32 text-black/20" />
                                     </div>
                                 )}
-                                <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black to-transparent z-10">
-                                    <h2 className="font-display text-5xl md:text-6xl font-black text-white uppercase mb-1 drop-shadow-lg">{member.name}</h2>
-                                    <p className="font-sans text-brand-yellow font-bold uppercase tracking-widest text-sm bg-black inline-block px-3 py-1 rounded-full border border-white/20">{member.role}</p>
+                                <div className="absolute bottom-0 left-0 w-full p-4 md:p-6 bg-gradient-to-t from-black to-transparent z-10">
+                                    <h2 className="font-display text-4xl md:text-6xl font-black text-white uppercase mb-1 drop-shadow-lg">{member.name}</h2>
+                                    <p className="font-sans text-brand-yellow font-bold uppercase tracking-widest text-xs md:text-sm bg-black inline-block px-2 md:px-3 py-1 rounded-full border border-white/20">{member.role}</p>
                                 </div>
                             </div>
 
-                            <div className="p-6 md:p-8 flex-1 overflow-y-auto custom-scrollbar bg-brand-cream">
+                            <div className="p-4 md:p-8 flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar bg-brand-cream relative">
                                 <AnimatePresence mode="wait">
                                     {view === 'details' && (
                                         <motion.div
@@ -134,32 +134,33 @@ export default function MemberModal({ isOpen, onClose, member }: MemberModalProp
                                             animate={{ opacity: 1, x: 0 }}
                                             exit={{ opacity: 0, x: -20 }}
                                             onSubmit={handleSubmit}
-                                            className="flex flex-col h-full"
+                                            className="flex flex-col min-h-full"
                                         >
-                                            <h3 className="font-display text-3xl font-black mb-2 text-black uppercase">Speak your mind</h3>
-                                            <p className="text-gray-600 font-medium mb-6">Don't worry, it's completely anonymous.</p>
+                                            <h3 className="font-display text-3xl font-black mb-1 md:mb-2 text-black uppercase">Speak your mind</h3>
+                                            <p className="text-gray-600 font-medium text-sm md:text-base mb-4 md:mb-6">Don't worry, it's completely anonymous.</p>
 
                                             <textarea
                                                 required
                                                 value={message}
                                                 onChange={(e) => setMessage(e.target.value)}
                                                 placeholder="Write your appreciation, suggestions, feedback, memories or fun confessions here..."
-                                                className="w-full h-48 p-4 rounded-xl bg-white border-2 border-black text-black placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-brand-yellow/50 resize-none mb-6 text-lg font-medium shadow-[4px_4px_0px_rgba(0,0,0,0.1)]"
+                                                className="w-full h-32 md:h-48 p-4 rounded-xl bg-white border-2 border-black text-black placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-brand-yellow/50 resize-none mb-6 text-base md:text-lg font-medium shadow-[4px_4px_0px_rgba(0,0,0,0.1)]"
                                             />
-                                            <div className="flex gap-4 mt-auto">
+                                            <div className="flex flex-col-reverse sm:flex-row gap-3 sm:gap-4 mt-auto pb-2">
                                                 <button
                                                     type="button"
                                                     onClick={() => setView('details')}
-                                                    className="px-6 py-3 rounded-xl bg-white border-2 border-black text-black hover:bg-gray-100 transition-colors font-bold shadow-[4px_4px_0px_#000] active:translate-y-1 active:shadow-none"
+                                                    className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border-2 border-black text-black hover:bg-gray-100 transition-colors font-bold shadow-[4px_4px_0px_#000] active:translate-y-1 active:shadow-none flex-shrink-0"
                                                 >
                                                     BACK
                                                 </button>
                                                 <button
                                                     type="submit"
-                                                    className="flex-1 py-3 rounded-xl bg-brand-yellow border-2 border-black text-black font-black uppercase tracking-wider hover:bg-brand-orange transition-colors shadow-[6px_6px_0px_#000] active:translate-y-1 active:shadow-none flex items-center justify-center gap-2"
+                                                    className="w-full flex-1 py-3 px-4 rounded-xl bg-brand-yellow border-2 border-black text-black font-black uppercase tracking-wider hover:bg-brand-orange transition-colors shadow-[6px_6px_0px_#000] active:translate-y-1 active:shadow-none flex items-center justify-center gap-2"
                                                 >
-                                                    Send Anonymously
-                                                    <SendHorizontal className="w-5 h-5" strokeWidth={3} />
+                                                    <span className="hidden sm:inline">Send Anonymously</span>
+                                                    <span className="sm:hidden">Send</span>
+                                                    <SendHorizontal className="w-5 h-5 shrink-0" strokeWidth={3} />
                                                 </button>
                                             </div>
                                         </motion.form>

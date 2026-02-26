@@ -76,21 +76,21 @@ export default function ExcomGrid() {
                                         )}
 
                                         {/* Role Badge */}
-                                        <div className="absolute top-2 right-2 bg-brand-yellow text-brand-dark text-[10px] md:text-xs font-bold uppercase px-2 py-1 border border-brand-dark rounded-md z-10">
+                                        <div className="absolute top-2 right-2 bg-brand-yellow text-brand-dark text-[8px] md:text-xs font-bold uppercase px-1.5 md:px-2 py-0.5 md:py-1 border border-brand-dark rounded-md z-10 text-center max-w-[90%] truncate">
                                             {member.role}
                                         </div>
 
                                         {/* Hover Overlay Text */}
                                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-blue/20 backdrop-blur-[1px]">
-                                            <span className="bg-white text-brand-dark font-display uppercase tracking-wider text-xl px-4 py-2 border-2 border-brand-dark transform -rotate-3 shadow-[4px_4px_0_#000]">
+                                            <span className="bg-white text-brand-dark font-display uppercase tracking-wider text-sm md:text-xl px-2 md:px-4 py-1 md:py-2 border-2 border-brand-dark transform -rotate-3 shadow-[4px_4px_0_#000]">
                                                 View Profile
                                             </span>
                                         </div>
                                     </div>
 
                                     {/* Name */}
-                                    <div className="h-[20%] flex items-center justify-center p-2 bg-white group-hover:bg-brand-cream transition-colors duration-300">
-                                        <h3 className="font-display text-xl uppercase leading-none text-center text-brand-dark group-hover:text-brand-blue transition-colors duration-300">{member.name}</h3>
+                                    <div className="h-[20%] flex items-center justify-center p-1 md:p-2 bg-white group-hover:bg-brand-cream transition-colors duration-300">
+                                        <h3 className="font-display text-base md:text-xl uppercase leading-none text-center text-brand-dark group-hover:text-brand-blue transition-colors duration-300 line-clamp-2 md:line-clamp-none">{member.name}</h3>
                                     </div>
                                 </div>
                             </div>

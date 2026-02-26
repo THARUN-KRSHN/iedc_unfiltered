@@ -63,49 +63,51 @@ export default function Memories() {
                 <p className="font-sans text-black font-bold text-xl uppercase tracking-wider">Cherished moments from 2025-2026</p>
             </div>
 
-            <div className="flex flex-col gap-8 transform rotate-2">
-                {/* Row 1 - Scroll Left */}
-                <div className="flex w-[200%] gap-6">
-                    <motion.div style={{ x: x1 }} className="flex gap-6 w-full">
-                        {images1.concat(images1).concat(images1).map((src, i) => (
-                            <div key={`row1-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
-                                <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
+            <div className="w-full overflow-hidden py-8">
+                <div className="flex flex-col gap-8 transform rotate-2">
+                    {/* Row 1 - Scroll Left */}
+                    <div className="flex w-[200%] gap-6">
+                        <motion.div style={{ x: x1 }} className="flex gap-6 w-full">
+                            {images1.concat(images1).concat(images1).map((src, i) => (
+                                <div key={`row1-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
+                                    <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
 
-                {/* Row 2 - Scroll Right */}
-                <div className="flex w-[200%] gap-6">
-                    <motion.div style={{ x: x2 }} className="flex gap-6 w-full">
-                        {images2.concat(images2).concat(images2).map((src, i) => (
-                            <div key={`row2-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
-                                <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
+                    {/* Row 2 - Scroll Right */}
+                    <div className="flex w-[200%] gap-6">
+                        <motion.div style={{ x: x2 }} className="flex gap-6 w-full">
+                            {images2.concat(images2).concat(images2).map((src, i) => (
+                                <div key={`row2-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
+                                    <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
 
-                {/* Row 3 - Scroll Left */}
-                <div className="flex w-[200%] gap-6">
-                    <motion.div style={{ x: x1 }} className="flex gap-6 w-full">
-                        {images3.concat(images3).concat(images3).map((src, i) => (
-                            <div key={`row3-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
-                                <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
+                    {/* Row 3 - Scroll Left */}
+                    <div className="flex w-[200%] gap-6">
+                        <motion.div style={{ x: x1 }} className="flex gap-6 w-full">
+                            {images3.concat(images3).concat(images3).map((src, i) => (
+                                <div key={`row3-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
+                                    <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
 
-                {/* Row 4 - Scroll Right */}
-                <div className="flex w-[200%] gap-6">
-                    <motion.div style={{ x: x2 }} className="flex gap-6 w-full">
-                        {images4.concat(images4).concat(images4).map((src, i) => (
-                            <div key={`row4-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
-                                <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
-                            </div>
-                        ))}
-                    </motion.div>
+                    {/* Row 4 - Scroll Right */}
+                    <div className="flex w-[200%] gap-6">
+                        <motion.div style={{ x: x2 }} className="flex gap-6 w-full">
+                            {images4.concat(images4).concat(images4).map((src, i) => (
+                                <div key={`row4-${i}`} className="h-48 md:h-64 aspect-[4/3] rounded-none border-4 border-black bg-white shrink-0 shadow-[8px_8px_0px_#000] hover:translate-y-[-4px] transition-transform duration-200">
+                                    <img src={src} alt="Memory" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 

@@ -49,7 +49,7 @@ export default function Hero() {
 
                 <p className="max-w-2xl mx-auto text-xl md:text-2xl font-medium text-brand-dark/80 leading-relaxed font-sans px-4">
                     A purely anonymous space to share appreciation, memes, and feedback for the <span className="text-yellow-500 bg-brand-blue px-2 py-1 transform -skew-x-6 inline-block">
-                        IEDC Excom 2024-26
+                        IEDC Excom 2025-26
                     </span>
 
                 </p>

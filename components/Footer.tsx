@@ -44,7 +44,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-brand-dark text-white pt-48 pb-24 relative overflow-hidden border-t-8 border-brand-yellow sticky top-0 z-40 min-h-screen flex flex-col justify-end">
+        <footer className="bg-brand-dark text-white pt-48 pb-24 relative z-40 overflow-hidden border-t-8 border-brand-yellow min-h-screen flex flex-col justify-end">
 
             {/* Decorative Wave at the top - Looping Animation */}
             <div className="absolute top-[-1px] left-0 w-full overflow-hidden leading-none z-10 transform rotate-360 scale-x-[-1]">
