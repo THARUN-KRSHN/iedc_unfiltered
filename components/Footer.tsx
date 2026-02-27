@@ -92,7 +92,7 @@ export default function Footer() {
                         Made with <Heart className="w-4 h-4 text-brand-red fill-brand-red animate-pulse" /> for Excom 24-26
                     </div>
                     <div className="text-gray-500 font-bold uppercase tracking-[0.2em] text-sm flex items-center justify-center md:justify-end gap-2 py-3 px-6">
-                        As the IEDC CCE Excom 2024–2026 chapter comes to a close, we want to take a moment to appreciate every idea shared, every event organized, every late-night discussion, and every step taken together to build a stronger community.
+                        As the IEDC CCE Excom 2025–2026 chapter comes to a close, we want to take a moment to appreciate every idea shared, every event organized, every late-night discussion, and every step taken together to build a stronger community.
 
                         This space was created so every voice could be heard — the appreciation, the suggestions, the laughter, and the memories that made this journey meaningful.
 
