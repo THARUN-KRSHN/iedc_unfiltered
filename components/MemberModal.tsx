@@ -178,7 +178,7 @@ export default function MemberModal({ isOpen, onClose, member }: MemberModalProp
                                                 <div className="w-16 h-16 border-8 border-gray-200 rounded-full" />
                                                 <div className="absolute top-0 left-0 w-16 h-16 border-8 border-brand-yellow border-t-transparent rounded-full animate-spin" />
                                             </div>
-                                            <p className="text-black font-bold text-xl uppercase tracking-widest animate-pulse">Encrypting...</p>
+                                            <p className="text-black font-bold text-xl uppercase tracking-widest animate-pulse">Sending...</p>
                                         </motion.div>
                                     )}
 
